@@ -4,13 +4,11 @@
 #![recursion_limit = "256"]
 #![allow(clippy::match_like_matches_macro)]
 
-#[macro_use]
-extern crate derive_new;
 #[cfg(test)]
 #[macro_use]
 extern crate lazy_static;
 #[macro_use]
-extern crate log;
+extern crate tracing;
 
 // N.B. these crates are loaded from the sysroot, so they need extern crate.
 extern crate rustc_ast;
@@ -22,6 +20,7 @@ extern crate rustc_expand;
 extern crate rustc_parse;
 extern crate rustc_session;
 extern crate rustc_span;
+extern crate thin_vec;
 
 // Necessary to pull in object code as the rest of the rustc crates are shipped only as rmeta
 // files.
